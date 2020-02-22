@@ -1,6 +1,6 @@
 import React from "react";
 
-function CocktailCard(cocktail) {
+function CocktailCard({cocktail}) {
 
     return (
         <div key={cocktail.idDrink}>

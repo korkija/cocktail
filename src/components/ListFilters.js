@@ -1,4 +1,5 @@
 import React, {useState, useEffect} from "react";
+import '../styles/index.css'
 
 function ListFilters({categoriesList, getCocktails, setFilters}) {
 
@@ -44,7 +45,7 @@ function ListFilters({categoriesList, getCocktails, setFilters}) {
                     <label htmlFor="scales">{item.strCategory}</label>
                 </div>
             ))}
-            <p><input type="submit" value="APPLY" onClick={setNewFilters}/></p>
+            <p><input className='button-apply' type="submit" value="APPLY" onClick={setNewFilters}/></p>
         </div>
     )
 }

@@ -54,10 +54,12 @@ export const cocktails = (state = INITIAL_DATA, action) => {
             };
         }
         case GET_LIST_COCKTAILS_FILTERED_RESOLVED: {
+            console.log("action.payLoad.cocktailsListForChosenCategory");
+            console.log(action.payLoad.cocktailsListForChosenCategories);
             return {
                 ...state,
                 isLoadingCocktailList: false,
-                cocktailsFiltered: action.payLoad.cocktailsListForAllCategory,
+                cocktailsFiltered: action.payLoad.cocktailsListForChosenCategories,
             };
         }
         case GET_LIST_COCKTAILS_FILTERED_REJECTED: {

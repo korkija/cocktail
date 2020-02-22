@@ -40,8 +40,6 @@ export const getCategoriesList = () => (dispatch) => {
     dispatch(getCategoriesListPending());
     axios.get(URL_CATEGORIES_COCKTAILS_LIST)
         .then(({data}) => {
-            console.log('data');
-            console.log(data.drinks);
             dispatch(getCategoriesListResolved((data.drinks)));
         })
         .catch((error) => {
@@ -53,10 +51,10 @@ const getListCocktailsFilteredPending = () => ({
     type: GET_LIST_COCKTAILS_FILTERED_PENDING
 });
 
-const getListCocktailsFilteredResolved = (cocktailsListForAllCategory) => ({
+const getListCocktailsFilteredResolved = (cocktailsListForChosenCategories) => ({
     type: GET_LIST_COCKTAILS_FILTERED_RESOLVED,
     payLoad: {
-        cocktailsListForAllCategory
+        cocktailsListForChosenCategories
     }
 });
 
@@ -69,12 +67,16 @@ export const getListCocktailsFiltered = () => (dispatch, getState) => {
     dispatch(getListCocktailsFilteredPending());
     const {cocktails} = getState();
     const checkedFilters = cocktails.categoriesCocktailsFilteredList.filter((item)=>item.checked);
-    const filteredList = checkedFilters.map((item) => {
+    let filteredList = [];
+    filteredList = checkedFilters.map((item) => {
         const urlForGetOneListCocktails = URL_COCKTAILS_FILTER_LIST + item.strCategory;
-        const objListFoCategory={};
+        const objListFoCategory= {};
         axios.get(urlForGetOneListCocktails)
             .then(({data}) => {
-                objListFoCategory[item.strCategory]=data.drinks;
+                objListFoCategory.category=item.strCategory;
+                objListFoCategory['category']=item.strCategory;
+                objListFoCategory['drinks']=data.drinks;
+                console.log(objListFoCategory.category);
             })
             .catch((error) => {
                 console.log(error);
@@ -83,6 +85,7 @@ export const getListCocktailsFiltered = () => (dispatch, getState) => {
         return objListFoCategory;
 
     });
-    console.log(filteredList);
+    console.log('filteredList[0].category');
+    console.log(filteredList[0].category);
     dispatch(getListCocktailsFilteredResolved(filteredList))
 };

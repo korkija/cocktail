@@ -6,6 +6,7 @@ import {Layout} from 'antd';
 import {connect} from 'react-redux';
 import {getListCocktailsFiltered, getCategoriesList, setFilters } from '../src/actions/cocktailsActions';
 import ListFilters from "./components/ListFilters";
+import CategoriesCard from "./components/CategoriesCard";
 
 const {Header, Footer, Sider, Content} = Layout;
 
@@ -39,7 +40,16 @@ class App extends React.Component {
                         }
 
                     </Sider>
-                    <Content>Content</Content>
+                    <Content>
+                        {this.props.isLoadingCocktailList
+                            ?
+                            <div>
+                                loading
+                            </div>
+                            :
+                            <CategoriesCard categories={this.props.cocktailsFiltered}/>
+                        }
+                    </Content>
                 </Layout>
                 <Footer>Footer</Footer>
             </Layout>
