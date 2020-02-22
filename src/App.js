@@ -1,26 +1,69 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import './styles/App.css';
+import 'antd/dist/antd.css';
+import './styles/index.css';
+import {Layout} from 'antd';
+import {connect} from 'react-redux';
+import {getListCocktailsFiltered, getCategoriesList, setFilters } from '../src/actions/cocktailsActions';
+import ListFilters from "./components/ListFilters";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+const {Header, Footer, Sider, Content} = Layout;
+
+class App extends React.Component {
+
+    componentDidMount() {
+        this.props.getCategoriesList();
+    }
+
+    render() {
+        console.log(this.props.isLoadingCategories);
+        return (
+            <Layout>
+                <Header>
+                    <div className='header-text'>
+                        Header
+                    </div>
+                </Header>
+                <Layout>
+                    <Sider>
+                        {this.props.isLoadingCategories
+                            ?
+                            <div>
+                                loading
+                            </div>
+                            :
+                                <ListFilters
+                                    categoriesList={this.props.categoriesCocktailsAllList}
+                                    getCocktails={this.props.getListCocktailsFiltered}
+                                    setFilters={this.props.setFilters}/>
+                        }
+
+                    </Sider>
+                    <Content>Content</Content>
+                </Layout>
+                <Footer>Footer</Footer>
+            </Layout>
+        );
+    }
 }
 
-export default App;
+const mapStateToProps = (state) => ({
+    isLoadingCategories: state.cocktails.isLoadingCategories,
+    isLoadingCocktailList: state.cocktails.isLoadingCocktailList,
+    categoriesCocktailsFilteredList: state.cocktails.categoriesCocktailsFilteredList,
+    categoriesCocktailsAllList: state.cocktails.categoriesCocktailsAllList,
+    cocktailsFiltered: state.cocktails.cocktailsFiltered,
+});
+
+const mapDispatchToProps = {
+    getListCocktailsFiltered,
+    getCategoriesList,
+    setFilters,
+};
+
+
+export const
+    AppContainer = connect(
+        mapStateToProps,
+        mapDispatchToProps
+    )(App);

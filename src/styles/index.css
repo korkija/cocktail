@@ -11,3 +11,20 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.header-text {
+  position: absolute;
+  width: 254px;
+  height: 41px;
+
+  font-family: Seaweed Script, serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 30px;
+  line-height: 41px;
+  /* identical to box height */
+
+  letter-spacing: 0.51em;
+
+  color: #FF8A00;
+}
