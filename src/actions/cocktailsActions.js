@@ -35,17 +35,24 @@ const getCategoriesListRejected = () => ({
     payLoad: "Something wrong!"
 });
 
-
-export const getCategoriesList = () => (dispatch) => {
+export const getCategoriesList = () => async (dispatch) => {
     dispatch(getCategoriesListPending());
-    axios.get(URL_CATEGORIES_COCKTAILS_LIST)
+    await axios.get(URL_CATEGORIES_COCKTAILS_LIST)
         .then(({data}) => {
-            dispatch(getCategoriesListResolved((data.drinks)));
+            const resultCategoriesChecked = data.drinks.map((category)=>({
+                'strCategory': category.strCategory,
+                checked: true,
+            }));
+            dispatch(getCategoriesListResolved(resultCategoriesChecked));
+        })
+        .then(()=>{
+            dispatch(getListCocktailsFiltered());
         })
         .catch((error) => {
             console.log(error);
             dispatch(getCategoriesListRejected());
-        })
+        });
+
 };
 const getListCocktailsFilteredPending = () => ({
     type: GET_LIST_COCKTAILS_FILTERED_PENDING
@@ -63,29 +70,59 @@ const getListCocktailsFilteredRejected = () => ({
     payLoad: "Something wrong!"
 });
 
-export const getListCocktailsFiltered = () => (dispatch, getState) => {
+export const getListCocktailsFiltered = () => async (dispatch, getState) => {
     dispatch(getListCocktailsFilteredPending());
     const {cocktails} = getState();
-    const checkedFilters = cocktails.categoriesCocktailsFilteredList.filter((item)=>item.checked);
-    let filteredList = [];
-    filteredList = checkedFilters.map((item) => {
-        const urlForGetOneListCocktails = URL_COCKTAILS_FILTER_LIST + item.strCategory;
-        const objListFoCategory= {};
-        axios.get(urlForGetOneListCocktails)
-            .then(({data}) => {
-                objListFoCategory.category=item.strCategory;
-                objListFoCategory['category']=item.strCategory;
-                objListFoCategory['drinks']=data.drinks;
-                console.log(objListFoCategory.category);
-            })
-            .catch((error) => {
-                console.log(error);
-                dispatch(getListCocktailsFilteredRejected());
-            });
-        return objListFoCategory;
 
-    });
-    console.log('filteredList[0].category');
-    console.log(filteredList[0].category);
-    dispatch(getListCocktailsFilteredResolved(filteredList))
+    const checkedFilters = cocktails.categoriesCocktailsFilteredList.filter((item) => item.checked);
+    try {
+        // const results = [];
+        // for (let i = 0; i < checkedFilters.length; i++) {
+        //     const urlForGetOneListCocktails = URL_COCKTAILS_FILTER_LIST + checkedFilters[i].strCategory;
+        //     try {
+        //         const result = await axios.get(urlForGetOneListCocktails);
+        //         results.push(result);
+        //     } catch (e) {
+        //     }
+        // }
+        //result = [...prev, ...new]
+        const results = await Promise.all(checkedFilters.map(({strCategory}) => {
+            const urlForGetOneListCocktails = URL_COCKTAILS_FILTER_LIST + strCategory;
+            return axios.get(urlForGetOneListCocktails);
+        }));
+        const categoriesResults = checkedFilters.map(({strCategory}, i) => ({
+            category: strCategory,
+            drinks: results[i].data.drinks,
+        }));
+
+        dispatch(getListCocktailsFilteredResolved(categoriesResults))
+    } catch (e) {
+        console.log(e);
+        dispatch(getListCocktailsFilteredRejected());
+    }
+
+
+    //
+    // filteredList = checkedFilters.map((item) => {
+    //     const urlForGetOneListCocktails = URL_COCKTAILS_FILTER_LIST + item.strCategory;
+    //     axios.get(urlForGetOneListCocktails)
+    //         .then(({data}) => {
+    //             const objListFoCategory= {};
+    //             objListFoCategory['category']=item.strCategory;
+    //             objListFoCategory['drinks']=data.drinks;
+    //             return {
+    //                 'category': item.strCategory,
+    //                 'drinks':data.drinks,
+    //             };
+    //
+    //         })
+    //         .catch((error) => {
+    //             console.log(error);
+    //             dispatch(getListCocktailsFilteredRejected());
+    //         });
+    //
+    // });
+    // console.log(filteredList);
+
+
 };

@@ -4,11 +4,11 @@ import 'antd/dist/antd.css';
 import './styles/index.css';
 import {Layout} from 'antd';
 import {connect} from 'react-redux';
-import {getListCocktailsFiltered, getCategoriesList, setFilters } from '../src/actions/cocktailsActions';
+import {getListCocktailsFiltered, getCategoriesList, setFilters} from '../src/actions/cocktailsActions';
 import ListFilters from "./components/ListFilters";
 import CategoriesCard from "./components/CategoriesCard";
 
-const {Header, Footer, Sider, Content} = Layout;
+const {Footer, Sider, Content} = Layout;
 
 class App extends React.Component {
 
@@ -17,34 +17,33 @@ class App extends React.Component {
     }
 
     render() {
-        console.log(this.props.isLoadingCategories);
         return (
-            <Layout>
-                <Header>
-                    <div className='header-text'>
-                        Header
-                    </div>
-                </Header>
+            <Layout style={{backgroundColor: 'white'}}>
+                <div className='header-text'>
+                    Cocktail BD
+                    <img src="glass.jpg" style={{marginLeft : 40}} height="50" width="28" alt='cocktail'/>
+                </div>
                 <Layout>
-                    <Sider>
+                    <Sider className='sider' width='250px' style={{backgroundColor: 'white'}}>
                         {this.props.isLoadingCategories
                             ?
                             <div>
                                 loading
                             </div>
                             :
-                                <ListFilters
-                                    categoriesList={this.props.categoriesCocktailsAllList}
-                                    getCocktails={this.props.getListCocktailsFiltered}
-                                    setFilters={this.props.setFilters}/>
+                            <ListFilters
+                                categoriesList={this.props.categoriesCocktailsAllList}
+                                getCocktails={this.props.getListCocktailsFiltered}
+                                setFilters={this.props.setFilters}/>
                         }
 
                     </Sider>
-                    <Content>
+                    <Content style={{backgroundColor: 'white'}}>
                         {this.props.isLoadingCocktailList
                             ?
-                            <div>
+                            <div className='loading'>
                                 loading
+
                             </div>
                             :
                             <CategoriesCard categories={this.props.cocktailsFiltered}/>

@@ -34,9 +34,9 @@ function ListFilters({categoriesList, getCocktails, setFilters}) {
     };
 
     return (
-        <div>
+        <div className='checkbox-filter'>
             {checkedCategories.map((item) => (
-                <div key={item.strCategory}>
+                <div className='item-filter' key={item.strCategory}>
                     <input type="checkbox"
                            id={item.strCategory}
                            name={item.strCategory}

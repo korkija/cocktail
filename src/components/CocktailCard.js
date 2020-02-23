@@ -3,9 +3,11 @@ import React from "react";
 function CocktailCard({cocktail}) {
 
     return (
-        <div key={cocktail.idDrink}>
-            <label>{cocktail.strDrink}</label>
-            <img src={cocktail.strDrinkThumb} alt={cocktail.strDrink}/>
+        <div className='card-cocktail'>
+            <img className='img-card' src={cocktail.strDrinkThumb + '/preview'} alt={cocktail.strDrink}/>
+            <div>
+                <label>{cocktail.strDrink}</label>
+            </div>
         </div>
     )
 }
