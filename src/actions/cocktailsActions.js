@@ -100,29 +100,4 @@ export const getListCocktailsFiltered = () => async (dispatch, getState) => {
         console.log(e);
         dispatch(getListCocktailsFilteredRejected());
     }
-
-
-    //
-    // filteredList = checkedFilters.map((item) => {
-    //     const urlForGetOneListCocktails = URL_COCKTAILS_FILTER_LIST + item.strCategory;
-    //     axios.get(urlForGetOneListCocktails)
-    //         .then(({data}) => {
-    //             const objListFoCategory= {};
-    //             objListFoCategory['category']=item.strCategory;
-    //             objListFoCategory['drinks']=data.drinks;
-    //             return {
-    //                 'category': item.strCategory,
-    //                 'drinks':data.drinks,
-    //             };
-    //
-    //         })
-    //         .catch((error) => {
-    //             console.log(error);
-    //             dispatch(getListCocktailsFilteredRejected());
-    //         });
-    //
-    // });
-    // console.log(filteredList);
-
-
 };
