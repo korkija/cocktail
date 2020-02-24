@@ -6,7 +6,7 @@ function ListCocktails({listCategoriesCocktails}) {
         <div className='list-cocktails'>
             {
                 listCategoriesCocktails.map((item) => (
-                        <CocktailCard key={item.idDrink} cocktail={item}/>
+                    <CocktailCard key={item.idDrink} cocktail={item}/>
                 ))
             }
         </div>

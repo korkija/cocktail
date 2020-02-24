@@ -4,9 +4,14 @@ import 'antd/dist/antd.css';
 import './styles/index.css';
 import {Layout} from 'antd';
 import {connect} from 'react-redux';
-import {getListCocktailsFiltered, getCategoriesList, setFilters} from '../src/actions/cocktailsActions';
+import {
+    getListCocktailsFiltered,
+    getNextItemListCocktailsFiltered,
+    getCategoriesList,
+    setFiltersClearListCategories
+} from '../src/actions/cocktailsActions';
 import ListFilters from "./components/ListFilters";
-import CategoriesCard from "./components/CategoriesCard";
+import {CategoriesListContainer} from "./components/CategoriesList";
 
 const {Footer, Sider, Content} = Layout;
 
@@ -21,7 +26,7 @@ class App extends React.Component {
             <Layout style={{backgroundColor: 'white'}}>
                 <div className='header-text'>
                     Cocktail BD
-                    <img src="glass.jpg" style={{marginLeft : 40}} height="50" width="28" alt='cocktail'/>
+                    <img src="glass.jpg" style={{marginLeft: 40}} height="50" width="28" alt='cocktail'/>
                 </div>
                 <Layout>
                     <Sider className='sider' width='250px' style={{backgroundColor: 'white'}}>
@@ -33,20 +38,22 @@ class App extends React.Component {
                             :
                             <ListFilters
                                 categoriesList={this.props.categoriesCocktailsAllList}
-                                getCocktails={this.props.getListCocktailsFiltered}
-                                setFilters={this.props.setFilters}/>
+                                getCocktails={this.props.getNextItemListCocktailsFiltered}
+                                setFilters={this.props.setFiltersClearListCategories}/>
                         }
-
                     </Sider>
                     <Content style={{backgroundColor: 'white'}}>
                         {this.props.isLoadingCocktailList
                             ?
                             <div className='loading'>
-                                loading
-
+                                Loading
                             </div>
                             :
-                            <CategoriesCard categories={this.props.cocktailsFiltered}/>
+                            this.props.cocktailsFiltered.length !== 0
+                                ?
+                                <CategoriesListContainer categories={this.props.cocktailsFiltered}/>
+                                :
+                                <img src='https://i.gifer.com/7VE.gif' alt='Loading'/>
                         }
                     </Content>
                 </Layout>
@@ -66,10 +73,10 @@ const mapStateToProps = (state) => ({
 
 const mapDispatchToProps = {
     getListCocktailsFiltered,
+    getNextItemListCocktailsFiltered,
     getCategoriesList,
-    setFilters,
+    setFiltersClearListCategories,
 };
-
 
 export const
     AppContainer = connect(
