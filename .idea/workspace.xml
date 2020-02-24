@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="d0834d9d-581d-4818-9e04-948feda9d4be" name="Default Changelist" comment="IS READY?" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FavoritesManager">
+    <favorites_list name="cocktail" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1YALf3Qs0QpJBuAliGEiSyGoux7" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="Images" />
+    <property name="ts.external.directory.path" value="C:\Program Files\JetBrains\WebStorm 2019.2.2\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Андрей\JavaScript\cocktail\public" />
+      <recent name="D:\Андрей\JavaScript\cocktail\src\fonts" />
+      <recent name="D:\Андрей\JavaScript\cocktail\src\constantsAPP" />
+      <recent name="D:\Андрей\JavaScript\cocktail\src\styles" />
+    </key>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="d0834d9d-581d-4818-9e04-948feda9d4be" name="Default Changelist" comment="" />
+      <created>1582380551203</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1582380551203</updated>
+      <workItem from="1582380553040" duration="25578000" />
+      <workItem from="1582409114504" duration="1386000" />
+      <workItem from="1582444934705" duration="28453000" />
+      <workItem from="1582534344563" duration="31732000" />
+    </task>
+    <task id="LOCAL-00001" summary="add filters">
+      <created>1582404097707</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1582404097707</updated>
+    </task>
+    <task id="LOCAL-00002" summary="error Object doesn't have key....">
+      <created>1582410485338</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1582410485338</updated>
+    </task>
+    <task id="LOCAL-00003" summary="&#10;without paging">
+      <created>1582477837557</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1582477837557</updated>
+    </task>
+    <task id="LOCAL-00004" summary="&#10;icon add">
+      <created>1582478519215</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1582478519215</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="get categories&#10;get list Cocktails" />
+    <MESSAGE value="add filters" />
+    <MESSAGE value="error Object doesn't have key...." />
+    <MESSAGE value="&#10;without paging" />
+    <MESSAGE value="&#10;icon add" />
+    <MESSAGE value="scrolling is working" />
+    <MESSAGE value="link UP at the end" />
+    <MESSAGE value="IS READY?" />
+    <option name="LAST_COMMIT_MESSAGE" value="IS READY?" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="572" y="220" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1582475824657">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="572" y="220" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1536.824@0.0.1536.824" timestamp="1582475824657" />
+    <state x="559" y="0" key="CommitChangelistDialog2" timestamp="1582567432988">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="559" y="0" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1582567432988" />
+    <state x="147" y="65" key="DiffContextDialog" timestamp="1582568603968">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="147" y="65" key="DiffContextDialog/0.0.1536.824@0.0.1536.824" timestamp="1582568603968" />
+    <state x="716" y="183" key="FileChooserDialogImpl" timestamp="1582474988356">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="716" y="183" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1582474988356" />
+    <state x="639" y="306" key="Github.ShareDialog" timestamp="1582404120809">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="639" y="306" key="Github.ShareDialog/0.0.1536.824@0.0.1536.824" timestamp="1582404120809" />
+    <state x="147" y="65" width="1384" height="694" key="MergeDialog" timestamp="1582567554453">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="147" y="65" width="1384" height="694" key="MergeDialog/0.0.1536.824@0.0.1536.824" timestamp="1582567554453" />
+    <state x="481" y="128" key="MultipleFileMergeDialog" timestamp="1582567554462">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="481" y="128" key="MultipleFileMergeDialog/0.0.1536.824@0.0.1536.824" timestamp="1582567554462" />
+    <state x="606" y="123" key="RollbackChangesDialog" timestamp="1582567966007">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="606" y="123" key="RollbackChangesDialog/0.0.1536.824@0.0.1536.824" timestamp="1582567966007" />
+    <state x="444" y="84" key="SettingsEditor" timestamp="1582475065741">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="444" y="84" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1582475065741" />
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1582569537271">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1582569537271" />
+    <state x="473" y="49" width="611" height="659" key="find.popup" timestamp="1582559248065">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="473" y="49" width="611" height="659" key="find.popup/0.0.1536.824@0.0.1536.824" timestamp="1582559248065" />
+    <state x="550" y="125" key="git4idea.branch.GitSmartOperationDialog" timestamp="1582569567290">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="550" y="125" key="git4idea.branch.GitSmartOperationDialog/0.0.1536.824@0.0.1536.824" timestamp="1582569567290" />
+    <state x="776" y="189" key="run.anything.popup" timestamp="1582467661829">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="776" y="189" key="run.anything.popup/0.0.1536.824@0.0.1536.824" timestamp="1582467661829" />
+    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1582471439172">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1582471439172" />
+  </component>
+</project>

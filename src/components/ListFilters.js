@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from "react";
 import '../styles/index.css'
 
-function ListFilters({categoriesList, getCocktails, setFilters}) {
+function ListFilters({categoriesList, setFilters}) {
 
     const checkedCategoriesDefault = categoriesList.map((item) => (
         {
@@ -13,24 +13,22 @@ function ListFilters({categoriesList, getCocktails, setFilters}) {
     const [checkedCategories, setCheckedCategories] = useState(checkedCategoriesDefault);
 
     useEffect(() => {
-        // action on update of movies
     }, [checkedCategories]);
 
     const handleChange = (e) => {
         setCheckedCategories(
-            checkedCategories.map((item) =>{
-                return  item.strCategory !== e.target.id
-                    ?item
-                    :{
+            checkedCategories.map((item) => {
+                return item.strCategory !== e.target.id
+                    ? item
+                    : {
                         'strCategory': item.strCategory,
-                        checked:!item.checked,
+                        checked: !item.checked,
                     }
             }));
     };
 
     const setNewFilters = () => {
         setFilters(checkedCategories);
-        getCocktails();
     };
 
     return (
