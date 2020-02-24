@@ -26,7 +26,7 @@ class App extends React.Component {
             <Layout style={{backgroundColor: 'white'}}>
                 <div className='header-text'>
                     Cocktail BD
-                    <img src="glass.jpg" style={{marginLeft: 40}} height="50" width="28" alt='cocktail'/>
+                    <img src="glass.png" style={{marginLeft : 40}} height="50" width="28" alt='cocktail'/>
                 </div>
                 <Layout>
                     <Sider className='sider' width='250px' style={{backgroundColor: 'white'}}>
